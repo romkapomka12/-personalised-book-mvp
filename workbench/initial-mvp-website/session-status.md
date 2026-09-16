@@ -2,7 +2,7 @@
 
 - Workstream: initial-mvp-website
 - Status: IN_PROGRESS
-- Last Updated: 2026-09-16 13:50 UTC+3
+- Last Updated: 2026-09-16 14:15 UTC+3
 
 ## Progress
 
@@ -14,9 +14,10 @@
 - Completed: User confirmed the deployed site opened successfully.
 - Completed: Workbench protocol adapted and added to this repository.
 - Completed: Competitor spreadsheet analyzed and positioning captured in `workbench/competitor-research/context.md`.
-- In progress: Improve the first landing page into MVP v0.2 using competitor-informed positioning.
+- Completed: Landing page v0.2 implemented in `index.html`, `css/style.css`, and `js/main.js`.
+- In progress: Review deployed v0.2 and prepare SEO/analytics next steps.
 - Blockers: none.
 
 ## NEXT STEP
 
-Use `workbench/competitor-research/context.md` to improve `index.html` with MVP v0.2 hero copy, pricing, FAQ, and clearer positioning.
+Open the deployed GitHub Pages site and review the v0.2 layout on mobile first.
