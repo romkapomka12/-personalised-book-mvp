@@ -15,6 +15,8 @@
 - [x] Improve local photo preview validation for mobile uploads.
 - [x] Document the endpoint activation steps in `README.md`.
 - [x] Create the owner-controlled Formspree form and add its endpoint to `index.html`.
-- [ ] Test delivery from the live GitHub Pages site to the owner's email.
+- [x] Test delivery from the live GitHub Pages site to the owner's email.
+- [x] Replace internal language and theme codes with human-readable email values.
+- [ ] Retest the live form and confirm that language and theme appear correctly.
 - [ ] Publish a privacy policy before collecting real customer requests.
 - [ ] Mark v0.3 complete after successful end-to-end delivery.
