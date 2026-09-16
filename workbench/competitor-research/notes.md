@@ -4,6 +4,7 @@
 - Decision: Use a simple initial pricing ladder in landing-page copy: Digital PDF first, then future Softcover and Hardcover options. Treat exact prices as placeholders until cost research is complete.
 - Decision: Keep Ukrainian and English support as an early strategic advantage because most competitors are either global-English or local-Ukrainian, not clearly built for both from the start.
 - Decision: The first MVP should highlight one clear scenario rather than a large catalog: a child aged 3–8 becomes the hero of a space adventure.
+- Decision: Landing page v0.2 should sell the controlled personalised gift outcome, not the technology. AI is treated as a future production method, not the main promise.
 - Pitfall: AI competitors can generate quickly, but quality consistency and child likeness may become the main trust problem.
 - Pitfall: Classic competitors have strong trust and preview UX; we should not ignore professional presentation just because we use AI later.
 - Pitfall: Etsy sellers win with human reassurance and revisions, but this can become operationally heavy. Preserve the reassurance, automate the routine parts.
