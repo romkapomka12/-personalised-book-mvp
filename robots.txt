@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://romkapomka12.github.io/-personalised-book-mvp/sitemap.xml
