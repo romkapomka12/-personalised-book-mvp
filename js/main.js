@@ -143,9 +143,17 @@ form.addEventListener('submit', async (event) => {
   const endpoint = form.action;
   const endpointConfigured = endpoint && !endpoint.includes(FORM_ID_PLACEHOLDER);
 
-  formData.append('bookLanguageLabel', languageLabels[formData.get('bookLanguage')] || '');
-  formData.append('bookThemeLabel', themeLabels[formData.get('bookTheme')] || '');
-  formData.append('photoReference', photoInput.files && photoInput.files.length ? 'Selected locally, not attached' : 'Not selected');
+  const selectedLanguage = String(formData.get('bookLanguage') || '');
+  const selectedTheme = String(formData.get('bookTheme') || '');
+  const hasPhoto = Boolean(photoInput.files && photoInput.files.length);
+
+  formData.set('bookLanguage', languageLabels[selectedLanguage] || selectedLanguage);
+  formData.set('bookTheme', themeLabels[selectedTheme] || selectedTheme);
+  formData.set('privacyConsent', 'Погоджено');
+  formData.set(
+    'photoReference',
+    hasPhoto ? 'Вибрано локально, файл не прикріплено' : 'Фото не вибрано'
+  );
 
   if (!endpointConfigured) {
     renderRequestPreview(formData, false);
