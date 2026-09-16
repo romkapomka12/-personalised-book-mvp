@@ -2,7 +2,7 @@
 
 - Workstream: initial-mvp-website
 - Status: IN_PROGRESS
-- Last Updated: 2026-09-16 13:30 UTC+3
+- Last Updated: 2026-09-16 13:50 UTC+3
 
 ## Progress
 
@@ -13,9 +13,10 @@
 - Completed: `.nojekyll` added after initial 404; Pages build then completed successfully.
 - Completed: User confirmed the deployed site opened successfully.
 - Completed: Workbench protocol adapted and added to this repository.
-- In progress: Improve the first landing page into MVP v0.2.
+- Completed: Competitor spreadsheet analyzed and positioning captured in `workbench/competitor-research/context.md`.
+- In progress: Improve the first landing page into MVP v0.2 using competitor-informed positioning.
 - Blockers: none.
 
 ## NEXT STEP
 
-Improve `index.html` by adding MVP v0.2 landing sections for pricing, FAQ, and clearer product positioning.
+Use `workbench/competitor-research/context.md` to improve `index.html` with MVP v0.2 hero copy, pricing, FAQ, and clearer positioning.
