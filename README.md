@@ -14,7 +14,7 @@ Later, the project can grow into a real product with AI-generated text, AI-assis
 
 ## Current MVP scope
 
-The v0.3-ready version includes:
+The v0.3 version includes:
 
 - one landing page;
 - basic responsive layout;
@@ -23,7 +23,7 @@ The v0.3-ready version includes:
 - parent email and consent fields;
 - accessible loading, success, warning and error states;
 - local photo validation and preview without uploading the file;
-- Formspree-ready email submission;
+- Formspree email submission, pending one live delivery test;
 - safe request preview without injecting user input as HTML;
 - basic SEO files: `robots.txt` and `sitemap.xml`.
 
@@ -38,7 +38,7 @@ The v0.3-ready version includes:
 
 - Improve the landing page copy.
 - Add more book themes.
-- Prepare the project for GitHub Pages deployment.
+- Test Formspree delivery from the live GitHub Pages site.
 - Add Google Search Console and Google Analytics later.
 - Research competitors and update product decisions based on real market data.
 
@@ -47,15 +47,14 @@ The v0.3-ready version includes:
 The first product direction is a personalised children’s book. Later, the same platform could support other book types, such as family stories, couple stories, wedding stories and personal life stories.
 
 
-## Activate v0.3 email delivery
+## v0.3 email delivery
 
-The form code is ready, but real email delivery stays disabled until the project owner creates a Formspree form.
+The owner-controlled Formspree endpoint is connected to the website.
 
-1. Create a form at [Formspree](https://formspree.io/).
-2. Copy its endpoint, for example `https://formspree.io/f/abcdwxyz`.
-3. In `index.html`, replace `https://formspree.io/f/YOUR_FORM_ID` with the real endpoint.
-4. Commit the change and send one test request from the GitHub Pages site.
-5. Confirm that the request arrives at the intended email address.
+1. Open the live GitHub Pages site.
+2. Send one test request with non-sensitive sample data.
+3. Confirm that the request appears in Formspree and reaches the intended email address.
+4. Record the successful test in the product roadmap workstream.
 
 The Formspree endpoint is not a secret. API keys, passwords and customer data must never be committed.
 
