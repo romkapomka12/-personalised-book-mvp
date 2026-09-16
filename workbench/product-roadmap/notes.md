@@ -13,3 +13,4 @@
 - Decision: The Formspree endpoint may be committed because it is a public form identifier, not a secret credential.
 - Pitfall: Do not describe v0.3 as live until an end-to-end request reaches the owner's email.
 - Follow-up: Publish a clear privacy policy before accepting real customer data.
+- Decision: Owner-created Formspree endpoint was connected on 2026-09-16; v0.3 still requires one live end-to-end delivery test before completion.
