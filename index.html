@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="MVP сайту для створення персоналізованих дитячих книг, де дитина стає головним героєм історії." />
+  <title>Personalised Book MVP</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav container" aria-label="Головна навігація">
+      <a class="logo" href="#">StoryHero</a>
+      <div class="nav-links">
+        <a href="#how-it-works">Як це працює</a>
+        <a href="#book-preview">Приклад</a>
+        <a href="#create-book">Створити книгу</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <p class="eyebrow">Персоналізовані дитячі книги</p>
+          <h1>Створи казку, де твоя дитина — головний герой</h1>
+          <p class="hero-text">
+            Навчальний MVP майбутнього сервісу: обираємо тему, вводимо імʼя дитини,
+            додаємо інтереси та готуємо основу для персоналізованої книги.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#create-book">Створити мою книгу</a>
+            <a class="button secondary" href="#book-preview">Подивитися приклад</a>
+          </div>
+        </div>
+
+        <article class="book-card" aria-label="Приклад персоналізованої книги">
+          <div class="book-cover">
+            <span class="book-badge">MVP</span>
+            <h2>Космічна пригода Софії</h2>
+            <p>24 сторінки • 3–8 років • PDF + друк у майбутньому</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="how-it-works" class="section container">
+      <p class="eyebrow">Перший сценарій</p>
+      <h2>Як це працює</h2>
+      <div class="steps-grid">
+        <article class="step-card">
+          <span>1</span>
+          <h3>Вводимо дані</h3>
+          <p>Імʼя, вік, мова, інтереси дитини та бажана тема книги.</p>
+        </article>
+        <article class="step-card">
+          <span>2</span>
+          <h3>Обираємо сюжет</h3>
+          <p>Для v0.1 починаємо з простої теми: космічна пригода.</p>
+        </article>
+        <article class="step-card">
+          <span>3</span>
+          <h3>Готуємо preview</h3>
+          <p>Пізніше тут буде попередній перегляд книги перед оплатою.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="book-preview" class="section preview-section">
+      <div class="container preview-grid">
+        <div>
+          <p class="eyebrow">Приклад продукту</p>
+          <h2>Книга про дитину, а не просто книга з іменем</h2>
+          <p>
+            Ідея v1 — дитина стає впізнаваним героєм історії. На старті ми тестуємо
+            попит і UX, а потім зможемо додати AI-ілюстрації, генерацію PDF та друк.
+          </p>
+        </div>
+        <div class="features-list">
+          <div>✅ Імʼя дитини в історії</div>
+          <div>✅ Вік та інтереси</div>
+          <div>✅ Українська / англійська мова</div>
+          <div>✅ Фото-preview локально в браузері</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="create-book" class="section container">
+      <p class="eyebrow">MVP форма</p>
+      <h2>Створити персоналізовану книгу</h2>
+      <form class="book-form" id="bookForm">
+        <div class="form-grid">
+          <label>
+            Імʼя дитини
+            <input type="text" id="childName" name="childName" placeholder="Наприклад, Софія" required />
+          </label>
+
+          <label>
+            Вік
+            <input type="number" id="childAge" name="childAge" min="1" max="12" placeholder="6" required />
+          </label>
+
+          <label>
+            Мова книги
+            <select id="bookLanguage" name="bookLanguage">
+              <option value="uk">Українська</option>
+              <option value="en">English</option>
+            </select>
+          </label>
+
+          <label>
+            Тема
+            <select id="bookTheme" name="bookTheme">
+              <option value="space">Космічна пригода</option>
+              <option value="forest">Казковий ліс</option>
+              <option value="dinosaurs">Світ динозаврів</option>
+            </select>
+          </label>
+        </div>
+
+        <label>
+          Що дитина любить?
+          <textarea id="childInterests" name="childInterests" rows="4" placeholder="Наприклад: коней, космос, динозаврів"></textarea>
+        </label>
+
+        <label>
+          Фото дитини для майбутнього персонажа
+          <input type="file" id="childPhoto" name="childPhoto" accept="image/*" />
+        </label>
+
+        <div class="photo-preview" id="photoPreview" aria-live="polite">
+          <span>Тут зʼявиться preview фото</span>
+        </div>
+
+        <label class="checkbox-label">
+          <input type="checkbox" required />
+          Я розумію, що це навчальний MVP, а не готовий магазин.
+        </label>
+
+        <button class="button primary" type="submit">Створити preview</button>
+      </form>
+
+      <div class="result-card" id="resultCard" hidden></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2026 StoryHero MVP. Навчальний проєкт персоналізованих книг.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
