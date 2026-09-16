@@ -18,7 +18,7 @@ photoInput.addEventListener('change', () => {
   const file = photoInput.files?.[0];
 
   if (!file) {
-    photoPreview.innerHTML = '<span>Тут зʼявиться preview фото</span>';
+    photoPreview.innerHTML = '<span>Тут зʼявиться локальний preview фото</span>';
     return;
   }
 
@@ -35,15 +35,17 @@ form.addEventListener('submit', (event) => {
   const bookLanguage = formData.get('bookLanguage');
   const bookTheme = formData.get('bookTheme');
   const childInterests = formData.get('childInterests')?.trim();
+  const hasPhoto = photoInput.files?.length > 0;
 
   resultCard.hidden = false;
   resultCard.innerHTML = `
-    <h3>Preview заявки</h3>
+    <h3>Preview майбутньої заявки</h3>
     <p><strong>Головний герой:</strong> ${childName}, ${childAge} років</p>
     <p><strong>Тема:</strong> ${themeLabels[bookTheme]}</p>
     <p><strong>Мова:</strong> ${languageLabels[bookLanguage]}</p>
     <p><strong>Інтереси:</strong> ${childInterests || 'ще не вказано'}</p>
-    <p class="result-note">Наступний крок у майбутньому — генерація сторінок книги та PDF.</p>
+    <p><strong>Фото-референс:</strong> ${hasPhoto ? 'додано локально для preview' : 'ще не додано'}</p>
+    <p class="result-note">MVP-логіка: спершу показуємо зрозумілий preview, потім у майбутньому зможемо перейти до PDF, друку й людської перевірки перед замовленням.</p>
   `;
 
   resultCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
