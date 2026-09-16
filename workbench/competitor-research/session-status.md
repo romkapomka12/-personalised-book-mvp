@@ -2,7 +2,7 @@
 
 - Workstream: competitor-research
 - Status: IN_PROGRESS
-- Last Updated: 2026-09-16 13:45 UTC+3
+- Last Updated: 2026-09-16 14:15 UTC+3
 
 ## Progress
 
@@ -11,9 +11,10 @@
 - Completed: `Конкуренти!A1:Z80` inspected.
 - Completed: Competitors grouped into classic brands, AI services, and Etsy sellers.
 - Completed: Initial pricing and positioning analysis captured in `context.md`.
-- In progress: Turn competitor insights into landing page v0.2 copy and product positioning.
+- Completed: Competitor-informed positioning converted into landing page v0.2 copy.
+- In progress: Deepen negative review analysis and refine pricing assumptions.
 - Blockers: none.
 
 ## NEXT STEP
 
-Use the competitor positioning from `workbench/competitor-research/context.md` to rewrite the landing page hero and add pricing/FAQ sections in `index.html`.
+Deepen negative review analysis for Wonderbly, Hooray Heroes, Librio, and Etsy sellers in the Google Sheet.
