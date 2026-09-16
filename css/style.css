@@ -508,3 +508,61 @@ textarea:focus {
     width: 100%;
   }
 }
+
+.optional-label {
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.field-help {
+  margin: -10px 0 16px;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.privacy-note {
+  margin: 0 0 18px;
+  padding: 16px;
+  border-left: 4px solid var(--secondary);
+  border-radius: 8px;
+  color: var(--secondary-dark);
+  background: #eef1ff;
+}
+
+.form-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.form-status {
+  flex: 1 1 280px;
+  margin: 0;
+  font-weight: 700;
+}
+
+.form-status[data-state="success"] {
+  color: #176b3a;
+}
+
+.form-status[data-state="warning"] {
+  color: #8a4b08;
+}
+
+.form-status[data-state="error"] {
+  color: #a52a2a;
+}
+
+.button:disabled {
+  cursor: wait;
+  opacity: 0.7;
+  transform: none;
+}
+
+.photo-preview.is-error {
+  padding: 20px;
+  color: #a52a2a;
+  border-color: #d98b8b;
+  text-align: center;
+}

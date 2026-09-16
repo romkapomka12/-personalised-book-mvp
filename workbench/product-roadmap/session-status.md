@@ -1,17 +1,18 @@
 # Session Status
 
 - Workstream: product-roadmap
-- Status: IN_PROGRESS
-- Last Updated: 2026-09-16 14:30 UTC+3
+- Status: BLOCKED
+- Last Updated: 2026-09-16 14:42 UTC+3
 
 ## Progress
 
-- Completed: User agreed with staged roadmap from v0.3 through v1.0.
-- Completed: Roadmap documented in `context.md`.
-- Completed: Plan checklist created.
-- In progress: Prepare next implementation decision for v0.3 form submission.
-- Blockers: v0.3 form submission method is not chosen yet.
+- Completed: Formspree selected as the temporary form backend for v0.3.
+- Completed: Website form now collects parent email, optional parent name, child details, and consent.
+- Completed: Async submission states and safe request preview implemented.
+- Completed: Photo preview validation improved; photo remains local and is excluded from email submission.
+- Completed: Activation instructions documented in `README.md`.
+- Blockers: A Formspree endpoint owned by the project owner is required before real email delivery can be tested.
 
 ## NEXT STEP
 
-Choose the v0.3 form submission method: Formspree/Getform, EmailJS, or custom Python backend.
+Create a Formspree form, then replace `YOUR_FORM_ID` in `index.html` with its endpoint.

@@ -33,7 +33,7 @@
             Перший сценарій — космічна пригода.
           </p>
           <div class="hero-actions">
-            <a class="button primary" href="#create-book">Створити preview</a>
+            <a class="button primary" href="#create-book">Подати заявку</a>
             <a class="button secondary" href="#pricing">Подивитися формати</a>
           </div>
           <div class="trust-strip" aria-label="Ключові переваги">
@@ -45,7 +45,7 @@
 
         <article class="book-card" aria-label="Приклад персоналізованої книги">
           <div class="book-cover">
-            <span class="book-badge">v0.2</span>
+            <span class="book-badge">v0.3</span>
             <h2>Софія і зоряна карта</h2>
             <p>Імʼя + вік + інтереси + фото-референс</p>
           </div>
@@ -69,8 +69,8 @@
         </article>
         <article class="step-card">
           <span>3</span>
-          <h3>Дивимось preview</h3>
-          <p>Перед оплатою має бути зрозуміло, що саме отримає сімʼя.</p>
+          <h3>Надсилаємо заявку</h3>
+          <p>Батьки залишають контакт, а ми перевіряємо деталі й відповідаємо щодо наступного кроку.</p>
         </article>
       </div>
     </section>
@@ -173,18 +173,67 @@
     </section>
 
     <section id="create-book" class="section container">
-      <p class="eyebrow">MVP форма</p>
-      <h2>Створити preview майбутньої книги</h2>
-      <form class="book-form" id="bookForm">
+      <p class="eyebrow">v0.3 — заявка на email</p>
+      <h2>Розкажіть про майбутнього героя</h2>
+      <p class="section-intro">
+        Заповніть коротку заявку. Після підключення форми її текстові дані надсилатимуться
+        власнику проєкту, а фото поки залишатиметься тільки у вашому браузері.
+      </p>
+
+      <form
+        class="book-form"
+        id="bookForm"
+        action="https://formspree.io/f/YOUR_FORM_ID"
+        method="POST"
+      >
         <div class="form-grid">
           <label>
+            Email батьків
+            <input
+              type="email"
+              id="parentEmail"
+              name="email"
+              placeholder="parent@example.com"
+              autocomplete="email"
+              required
+            />
+          </label>
+
+          <label>
+            Ваше імʼя <span class="optional-label">(необовʼязково)</span>
+            <input
+              type="text"
+              id="parentName"
+              name="parentName"
+              placeholder="Наприклад, Олена"
+              autocomplete="name"
+            />
+          </label>
+
+          <label>
             Імʼя дитини
-            <input type="text" id="childName" name="childName" placeholder="Наприклад, Софія" required />
+            <input
+              type="text"
+              id="childName"
+              name="childName"
+              placeholder="Наприклад, Софія"
+              maxlength="60"
+              required
+            />
           </label>
 
           <label>
             Вік
-            <input type="number" id="childAge" name="childAge" min="1" max="12" placeholder="6" required />
+            <input
+              type="number"
+              id="childAge"
+              name="childAge"
+              min="3"
+              max="8"
+              inputmode="numeric"
+              placeholder="6"
+              required
+            />
           </label>
 
           <label>
@@ -207,29 +256,50 @@
 
         <label>
           Що дитина любить?
-          <textarea id="childInterests" name="childInterests" rows="4" placeholder="Наприклад: коней, космос, динозаврів"></textarea>
+          <textarea
+            id="childInterests"
+            name="childInterests"
+            rows="4"
+            maxlength="500"
+            placeholder="Наприклад: коней, космос, динозаврів"
+          ></textarea>
         </label>
 
         <label>
-          Фото дитини для майбутнього персонажа
-          <input type="file" id="childPhoto" name="childPhoto" accept="image/*" />
+          Фото дитини для локального preview <span class="optional-label">(необовʼязково)</span>
+          <input
+            type="file"
+            id="childPhoto"
+            accept="image/jpeg,image/png,image/webp,image/heic,image/heif"
+            aria-describedby="photoHelp"
+          />
         </label>
+        <p class="field-help" id="photoHelp">
+          JPG, PNG, WebP або формат фото з телефону, до 10 МБ. У v0.3 файл не входить до заявки і не залишає браузер.
+        </p>
 
         <div class="photo-preview" id="photoPreview" aria-live="polite">
           <span>Тут зʼявиться локальний preview фото</span>
         </div>
 
+        <div class="privacy-note">
+          <strong>Що буде надіслано:</strong> email, імʼя, вік, мова, тема та інтереси.
+          Саме фото навмисно не надсилається на цьому етапі.
+        </div>
+
         <label class="checkbox-label">
-          <input type="checkbox" required />
-          Я розумію, що це навчальний MVP: фото не відправляється на сервер, а preview створюється локально.
+          <input type="checkbox" name="privacyConsent" value="accepted" required />
+          Я погоджуюся на використання введених даних для розгляду цієї заявки та відповіді на мій email.
         </label>
 
-        <button class="button primary" type="submit">Створити preview</button>
+        <div class="form-actions">
+          <button class="button primary" id="submitButton" type="submit">Надіслати заявку</button>
+          <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+        </div>
       </form>
 
       <div class="result-card" id="resultCard" hidden></div>
     </section>
-
     <section id="faq" class="section faq-section">
       <div class="container">
         <p class="eyebrow">FAQ</p>
@@ -248,6 +318,10 @@
             <p>Digital PDF дозволяє стартувати без міжнародної доставки, складу і складної поліграфічної логістики.</p>
           </details>
           <details>
+            <summary>Що відбувається після надсилання заявки?</summary>
+            <p>Ми отримаємо текстові дані заявки на email, звʼяжемося з батьками й уточнимо наступні кроки. Автоматичної генерації та оплати у v0.3 ще немає.</p>
+          </details>
+          <details>
             <summary>Чи будуть сімейні або весільні історії?</summary>
             <p>Так, це перспективна майбутня фішка. Але перший MVP тримаємо простим: дитяча книга про головного героя.</p>
           </details>
@@ -262,6 +336,6 @@
     </div>
   </footer>
 
-  <script src="js/main.js"></script>
+  <script src="js/main.js" defer></script>
 </body>
 </html>
