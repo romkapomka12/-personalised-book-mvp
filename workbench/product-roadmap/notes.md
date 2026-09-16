@@ -14,3 +14,5 @@
 - Pitfall: Do not describe v0.3 as live until an end-to-end request reaches the owner's email.
 - Follow-up: Publish a clear privacy policy before accepting real customer data.
 - Decision: Owner-created Formspree endpoint was connected on 2026-09-16; v0.3 still requires one live end-to-end delivery test before completion.
+- Pitfall: Formspree may reinterpret short internal values such as `uk` and expose raw values such as `forest` in notification emails.
+- Decision: Convert select values to human-readable labels before submission and do not send duplicate `bookLanguageLabel` or `bookThemeLabel` fields.
