@@ -16,3 +16,6 @@
 - Decision: Owner-created Formspree endpoint was connected on 2026-09-16; v0.3 still requires one live end-to-end delivery test before completion.
 - Pitfall: Formspree may reinterpret short internal values such as `uk` and expose raw values such as `forest` in notification emails.
 - Decision: Convert select values to human-readable labels before submission and do not send duplicate `bookLanguageLabel` or `bookThemeLabel` fields.
+- Validation: Corrected v0.3 payload was retested successfully on 2026-09-17; language and theme arrived with human-readable values and no duplicate label fields.
+- Decision: Treat v0.3 as technically complete but not production-ready until a privacy policy is published.
+- Decision: After privacy, v0.4 should use Google Sheets first with explicit request statuses and no child-photo storage.
