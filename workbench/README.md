@@ -36,6 +36,8 @@ Expected workstreams for this repository may include:
 - `initial-mvp-website` — first static landing page and GitHub Pages deployment.
 - `seo-and-analytics` — Google Search Console, sitemap, robots, GA4, Tag Manager.
 - `competitor-research` — competitor findings and product positioning notes.
+- `product-roadmap` — staged delivery from the request form through AI, PDF, and illustrations.
+- `book-production-research` — separate research into book layout, character creation, illustration generation, print files, and publishing workflows.
 - `future-backend` — later Python backend, PDF generation, AI workflow, and database planning.
 
 Create a new workstream only when the work is meaningfully separate from the current active one.
