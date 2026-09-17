@@ -1,5 +1,7 @@
 # Plan
 
+## Roadmap definition
+
 - [x] Agree staged roadmap from v0.3 to v1.0.
 - [x] Record v0.3: form sends request by email.
 - [x] Record v0.4: requests are saved to Google Sheet or database.
@@ -8,15 +10,26 @@
 - [x] Record v0.7: admin panel for story review.
 - [x] Record v0.8: automatic PDF generation.
 - [x] Record v1.0: AI or template-based illustrations.
-- [x] Choose Formspree as the temporary v0.3 form backend.
-- [x] Add parent email and optional parent name fields.
-- [x] Add consent and clear photo-handling copy.
-- [x] Prepare asynchronous email submission with loading, success, warning, and error states.
-- [x] Improve local photo preview validation for mobile uploads.
-- [x] Document the endpoint activation steps in `README.md`.
-- [x] Create the owner-controlled Formspree form and add its endpoint to `index.html`.
-- [x] Test delivery from the live GitHub Pages site to the owner's email.
-- [x] Replace internal language and theme codes with human-readable email values.
-- [ ] Retest the live form and confirm that language and theme appear correctly.
+
+## v0.3 — Email request flow
+
+- [x] Choose Formspree as the temporary form backend.
+- [x] Add parent email, optional parent name, child details, and consent.
+- [x] Add loading, success, warning, and error states.
+- [x] Keep child photos local and exclude them from submissions.
+- [x] Connect the owner-controlled Formspree endpoint.
+- [x] Verify delivery from GitHub Pages to Formspree and the owner's email.
+- [x] Replace internal language and theme codes with human-readable values.
+- [x] Retest and confirm correct language and theme fields.
+- [x] Mark the technical v0.3 milestone complete.
+
+## Production readiness
+
 - [ ] Publish a privacy policy before collecting real customer requests.
-- [ ] Mark v0.3 complete after successful end-to-end delivery.
+
+## v0.4 — Structured request tracking
+
+- [ ] Define Google Sheet columns and request statuses.
+- [ ] Choose the Formspree-to-Google-Sheets integration method.
+- [ ] Save each new request to the Sheet without storing child photos.
+- [ ] Test status tracking from new request through manual fulfilment.
