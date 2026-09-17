@@ -25,7 +25,12 @@
 
 ## Production readiness
 
-- [ ] Publish a privacy policy before collecting real customer requests.
+- [x] Define the privacy-policy scope for parent data, child details, Formspree, local photo preview, retention, and deletion.
+- [ ] Create a dedicated public StoryHero privacy email.
+- [ ] Publish `privacy.html` with the approved contact.
+- [ ] Link the policy from the request consent and site footer.
+- [ ] Add the policy page to `sitemap.xml`.
+- [ ] Verify the published policy on mobile before collecting real customer requests.
 
 ## v0.4 — Structured request tracking
 
