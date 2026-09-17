@@ -23,7 +23,7 @@ The v0.3 version includes:
 - parent email and consent fields;
 - accessible loading, success, warning and error states;
 - local photo validation and preview without uploading the file;
-- Formspree email submission, pending one live delivery test;
+- verified Formspree email submission with human-readable request values;
 - safe request preview without injecting user input as HTML;
 - basic SEO files: `robots.txt` and `sitemap.xml`.
 
@@ -51,10 +51,9 @@ The first product direction is a personalised children’s book. Later, the same
 
 The owner-controlled Formspree endpoint is connected to the website.
 
-1. Open the live GitHub Pages site.
-2. Send one test request with non-sensitive sample data.
-3. Confirm that the request appears in Formspree and reaches the intended email address.
-4. Record the successful test in the product roadmap workstream.
+Email delivery was verified end to end on 2026-09-16. Submissions reach Formspree and the owner's email with human-readable language and theme values.
+
+Before accepting real customer requests, the next production-readiness task is to publish a privacy policy covering parent and child data, Formspree processing, photo handling, retention, and deletion requests.
 
 The Formspree endpoint is not a secret. API keys, passwords and customer data must never be committed.
 
