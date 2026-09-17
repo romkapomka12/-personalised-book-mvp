@@ -25,7 +25,8 @@ The v0.3 version includes:
 - local photo validation and preview without uploading the file;
 - verified Formspree email submission with human-readable request values;
 - safe request preview without injecting user input as HTML;
-- basic SEO files: `robots.txt` and `sitemap.xml`.
+- basic SEO files: `robots.txt` and `sitemap.xml`;
+- a published privacy policy with a dedicated data-contact email.
 
 ## Tech stack
 
@@ -53,8 +54,8 @@ The owner-controlled Formspree endpoint is connected to the website.
 
 Email delivery was verified end to end on 2026-09-16. Submissions reach Formspree and the owner's email with human-readable language and theme values.
 
-Before accepting real customer requests, the next production-readiness task is to publish a privacy policy covering parent and child data, Formspree processing, photo handling, retention, and deletion requests.
+A privacy policy now covers parent and child data, Formspree processing, local-only photo handling, retention, and deletion requests. The public data-contact email is `yoursinstory.books@gmail.com`.
 
 The Formspree endpoint is not a secret. API keys, passwords and customer data must never be committed.
 
-For privacy, v0.3 sends only text fields. The child photo is intentionally excluded and remains local in the browser. Publish a privacy policy before collecting real customer requests.
+For privacy, v0.3 sends only text fields. The child photo is intentionally excluded and remains local in the browser. The next product milestone is v0.4 structured request tracking.

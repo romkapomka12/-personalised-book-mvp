@@ -23,3 +23,8 @@
 - Research note: Formspree processes and stores form submissions, may process data in the United States and other countries, and requires site owners to publish their own compatible privacy policy.
 - Privacy draft scope: controller/contact, submitted fields, purpose, consent, Formspree processing, local-only photo behavior, retention period, access/correction/deletion requests, children and parental authority, security limits, and policy updates.
 - Blocker: Do not publish a placeholder or invented privacy email.
+
+- Decision: Use `yoursinstory.books@gmail.com` as the public MVP contact for privacy, correction, and deletion requests.
+- Decision: Keep request data for up to six months after the last communication unless deletion is requested earlier or longer retention is legally required.
+- Decision: The preferred future umbrella brand is `Yours in Story` with the tagline `Personalized books for every chapter of life.`
+- Decision: Keep `StoryHero` as the temporary children-focused MVP label until a deliberate rebrand and domain purchase.

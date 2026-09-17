@@ -131,3 +131,13 @@ Before collecting real customer requests, publish a privacy policy that explains
 - how a parent can request correction or deletion
 
 After the privacy page is live, start v0.4 by defining a Google Sheet schema and request statuses before implementing automatic storage.
+
+## Brand Direction
+
+The preferred future umbrella brand is **Yours in Story** with the tagline:
+
+> Personalized books for every chapter of life.
+
+The name is intentionally broader than children's hero stories and can later support family, couple, wedding, baby-milestone, and life-story books.
+
+`StoryHero` remains the temporary name of the current children-focused MVP until a deliberate rebrand and domain purchase. The current public data-contact email is `yoursinstory.books@gmail.com`.

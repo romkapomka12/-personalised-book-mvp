@@ -26,10 +26,10 @@
 ## Production readiness
 
 - [x] Define the privacy-policy scope for parent data, child details, Formspree, local photo preview, retention, and deletion.
-- [ ] Create a dedicated public StoryHero privacy email.
-- [ ] Publish `privacy.html` with the approved contact.
-- [ ] Link the policy from the request consent and site footer.
-- [ ] Add the policy page to `sitemap.xml`.
+- [x] Create a dedicated public Yours in Story privacy email.
+- [x] Publish `privacy.html` with the approved contact.
+- [x] Link the policy from the request consent and site footer.
+- [x] Add the policy page to `sitemap.xml`.
 - [ ] Verify the published policy on mobile before collecting real customer requests.
 
 ## v0.4 — Structured request tracking
@@ -38,3 +38,9 @@
 - [ ] Choose the Formspree-to-Google-Sheets integration method.
 - [ ] Save each new request to the Sheet without storing child photos.
 - [ ] Test status tracking from new request through manual fulfilment.
+
+## Brand direction
+
+- [x] Record `Yours in Story` as the preferred future umbrella brand.
+- [x] Record the tagline: `Personalized books for every chapter of life.`
+- [x] Keep `StoryHero` as the temporary children-focused MVP name until a deliberate rebrand and domain purchase.
