@@ -36,7 +36,8 @@
 
 ## v0.4 — Structured request tracking
 
-- [ ] Define Google Sheet columns and request statuses.
+- [x] Define Google Sheet columns and request statuses.
+- [x] Create the `Заявки` sheet as a native table with dropdowns and a marked example row.
 - [ ] Choose the Formspree-to-Google-Sheets integration method.
 - [ ] Save each new request to the Sheet without storing child photos.
 - [ ] Test status tracking from new request through manual fulfilment.

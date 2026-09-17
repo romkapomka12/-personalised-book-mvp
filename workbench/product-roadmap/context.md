@@ -141,3 +141,39 @@ The preferred future umbrella brand is **Yours in Story** with the tagline:
 The name is intentionally broader than children's hero stories and can later support family, couple, wedding, baby-milestone, and life-story books.
 
 `StoryHero` remains the temporary name of the current children-focused MVP until a deliberate rebrand and domain purchase. The current public data-contact email is `yoursinstory.books@gmail.com`.
+
+## v0.4 Google Sheet Schema
+
+Use the existing business-research spreadsheet and keep operational requests in a separate sheet named `Заявки`.
+
+Canonical columns, in order:
+
+1. `ID заявки`
+2. `Дата/час`
+3. `Статус`
+4. `Email батьків`
+5. `Імʼя батьків`
+6. `Імʼя дитини`
+7. `Вік`
+8. `Мова`
+9. `Тема`
+10. `Інтереси дитини`
+11. `Згода`
+12. `Джерело`
+13. `Formspree ID`
+14. `Наступна дія`
+15. `Дата контакту`
+16. `Нотатки`
+17. `Оновлено`
+
+Allowed request statuses:
+
+- `Нова`
+- `На перевірці`
+- `Очікуємо відповідь`
+- `У роботі`
+- `Preview надіслано`
+- `Завершено`
+- `Скасовано`
+
+The source dropdown anticipates `Сайт`, `Etsy`, `Shopify`, and `Інше`. The v0.4 schema intentionally contains no child-photo storage column. A photo selected on the website remains local in the browser.

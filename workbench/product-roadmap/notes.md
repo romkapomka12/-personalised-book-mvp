@@ -32,3 +32,8 @@
 - Validation: The user reviewed the published privacy page on mobile and accepted it as sufficient for the current test stage.
 - Decision: v0.3 is closed and v0.4 structured request tracking is now the active milestone.
 - Follow-up: The current privacy text is an MVP test version and must be reviewed again before a real commercial launch, especially when payments, analytics, photo uploads, AI providers, or new storage systems are added.
+
+- Decision: Keep competitor research and request operations in the same spreadsheet but on separate sheets; the operational sheet is named `Заявки`.
+- Decision: Use a native Google Sheets table named `RequestsTable` with dropdown fields for status, language, theme, consent, and source.
+- Decision: v0.4 stores text request data only and has no child-photo column.
+- Validation: Header row, table metadata, dropdown definitions, status formatting, frozen header, column widths, and the marked demonstration row were verified after creation.
