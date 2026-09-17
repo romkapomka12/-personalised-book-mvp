@@ -2,18 +2,18 @@
 
 - Workstream: product-roadmap
 - Status: IN_PROGRESS
-- Last Updated: 2026-09-16 17:23 UTC+3
+- Last Updated: 2026-09-17 09:26 UTC+3
 
 ## Progress
 
-- Completed: Formspree endpoint connected and deployed.
-- Completed: First end-to-end submission reached the owner's email.
-- Completed: The first email exposed raw values `uk` and `forest` alongside correct labels.
-- Completed: Submission payload now replaces internal codes with `Українська` and `Казковий ліс` before sending.
-- Completed: Duplicate language/theme label fields removed from the outgoing request.
-- In progress: Verify the corrected email payload with one live request.
+- Completed: v0.3 request form deployed on GitHub Pages.
+- Completed: Formspree delivery verified end to end.
+- Completed: Retest confirmed human-readable language and theme fields without duplicates.
+- Completed: Child photos remain local and are not included in submissions.
+- Completed: Technical v0.3 milestone marked complete.
+- In progress: Prepare the site for real customer data before starting v0.4 storage.
 - Blockers: none.
 
 ## NEXT STEP
 
-Send one more test request from the live site and confirm that the email shows the selected language and theme correctly without duplicate label fields.
+Create and publish a privacy policy page covering parent and child data, Formspree processing, local-only photo preview, retention, and deletion requests.
