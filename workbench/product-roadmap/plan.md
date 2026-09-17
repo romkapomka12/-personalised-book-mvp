@@ -22,6 +22,8 @@
 - [x] Replace internal language and theme codes with human-readable values.
 - [x] Retest and confirm correct language and theme fields.
 - [x] Mark the technical v0.3 milestone complete.
+- [x] Accept the current privacy policy as the test version for this MVP stage.
+- [x] Close v0.3 and move the active milestone to v0.4.
 
 ## Production readiness
 
@@ -30,7 +32,7 @@
 - [x] Publish `privacy.html` with the approved contact.
 - [x] Link the policy from the request consent and site footer.
 - [x] Add the policy page to `sitemap.xml`.
-- [ ] Verify the published policy on mobile before collecting real customer requests.
+- [x] Verify the published policy on mobile before collecting real customer requests.
 
 ## v0.4 — Structured request tracking
 

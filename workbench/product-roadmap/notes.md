@@ -28,3 +28,7 @@
 - Decision: Keep request data for up to six months after the last communication unless deletion is requested earlier or longer retention is legally required.
 - Decision: The preferred future umbrella brand is `Yours in Story` with the tagline `Personalized books for every chapter of life.`
 - Decision: Keep `StoryHero` as the temporary children-focused MVP label until a deliberate rebrand and domain purchase.
+
+- Validation: The user reviewed the published privacy page on mobile and accepted it as sufficient for the current test stage.
+- Decision: v0.3 is closed and v0.4 structured request tracking is now the active milestone.
+- Follow-up: The current privacy text is an MVP test version and must be reviewed again before a real commercial launch, especially when payments, analytics, photo uploads, AI providers, or new storage systems are added.

@@ -35,13 +35,19 @@ The v0.3 version includes:
 - JavaScript
 - GitHub Pages
 
+## Current project status
+
+v0.3 is complete. The form delivery, human-readable request values, local-only photo preview, consent flow, and published test privacy policy have been verified.
+
+The active milestone is v0.4 structured request tracking.
+
 ## Planned next steps
 
-- Improve the landing page copy.
-- Add more book themes.
-- Test Formspree delivery from the live GitHub Pages site.
+- Define the Google Sheet columns and allowed request statuses.
+- Choose the Formspree-to-Google-Sheets integration method.
+- Save text request data without storing child photos.
+- Test the manual request workflow from a new submission through completion.
 - Add Google Search Console and Google Analytics later.
-- Research competitors and update product decisions based on real market data.
 
 ## Long-term ideas
 
