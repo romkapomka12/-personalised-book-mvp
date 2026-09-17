@@ -19,3 +19,7 @@
 - Validation: Corrected v0.3 payload was retested successfully on 2026-09-17; language and theme arrived with human-readable values and no duplicate label fields.
 - Decision: Treat v0.3 as technically complete but not production-ready until a privacy policy is published.
 - Decision: After privacy, v0.4 should use Google Sheets first with explicit request statuses and no child-photo storage.
+- Decision: Use a dedicated brand email in the public privacy policy instead of publishing a personal or test address.
+- Research note: Formspree processes and stores form submissions, may process data in the United States and other countries, and requires site owners to publish their own compatible privacy policy.
+- Privacy draft scope: controller/contact, submitted fields, purpose, consent, Formspree processing, local-only photo behavior, retention period, access/correction/deletion requests, children and parental authority, security limits, and policy updates.
+- Blocker: Do not publish a placeholder or invented privacy email.
