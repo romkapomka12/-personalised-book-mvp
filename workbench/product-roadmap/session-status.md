@@ -13,10 +13,10 @@
 - Completed: Child photos are excluded from v0.4 storage.
 - Completed: Formspree integration options compared using current official documentation.
 - Decision: Keep Formspree for email and use a free Google Apps Script companion endpoint for Sheet storage.
+- Completed: Validated Apps Script receiver and deployment guide added under `integrations/google-apps-script/`.
 - Completed: Future PDF/printed formats, separate production/delivery statuses, and later Nova Poshta/Ukrposhta integrations recorded.
-- In progress: Prepare the Apps Script receiver and deployment instructions.
 - Blockers: Google Apps Script must be deployed from the spreadsheet owner's Google account before the website endpoint can be connected.
 
 ## NEXT STEP
 
-Add the Google Apps Script receiver for the `Заявки` sheet, deploy it as a web app from the spreadsheet owner's account, and obtain its `/exec` URL.
+Deploy `integrations/google-apps-script/Code.gs` as a web app from the business spreadsheet and provide the production URL ending in `/exec`.

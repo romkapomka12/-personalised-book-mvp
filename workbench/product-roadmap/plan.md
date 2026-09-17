@@ -40,7 +40,9 @@
 - [x] Create the `Заявки` sheet as a native table with dropdowns and a marked example row.
 - [x] Compare Formspree-to-Google-Sheets integration methods.
 - [x] Select a free Google Apps Script companion endpoint for the MVP.
-- [ ] Add the Apps Script receiver to the Google Sheet and deploy it as a web app.
+- [x] Prepare the validated Apps Script receiver and deployment guide.
+- [ ] Deploy the Apps Script receiver from the spreadsheet owner's account.
+- [ ] Connect the production `/exec` URL to the website.
 - [ ] Send each website request to Formspree for email and Apps Script for Sheet storage.
 - [ ] Save each new request to the Sheet without storing child photos.
 - [ ] Test both email delivery and Sheet storage with one request.

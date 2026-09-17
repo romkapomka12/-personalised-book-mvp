@@ -34,25 +34,28 @@ The v0.3 version includes:
 - CSS
 - JavaScript
 - GitHub Pages
+- Formspree for MVP email delivery
+- Google Sheets and Google Apps Script for v0.4 request tracking
 
 ## Current project status
 
-v0.3 is complete. The form delivery, human-readable request values, local-only photo preview, consent flow, and published test privacy policy have been verified.
+v0.3 is complete. The active milestone is v0.4 structured request tracking.
 
-The active milestone is v0.4 structured request tracking.
+The `Заявки` sheet and request schema are ready. A validated Google Apps Script receiver has been prepared in `integrations/google-apps-script/`. It still needs to be deployed from the spreadsheet owner's Google account before the website can use it.
 
 ## Planned next steps
 
-- Define the Google Sheet columns and allowed request statuses.
-- Choose the Formspree-to-Google-Sheets integration method.
-- Save text request data without storing child photos.
-- Test the manual request workflow from a new submission through completion.
+- Deploy the Apps Script receiver and obtain its production `/exec` URL.
+- Connect the website to both Formspree email delivery and Google Sheet storage.
+- Test one request end to end.
+- Test the manual request workflow through completion.
 - Add Google Search Console and Google Analytics later.
 
 ## Long-term ideas
 
-The first product direction is a personalised children’s book. Later, the same platform could support other book types, such as family stories, couple stories, wedding stories and personal life stories.
+The first product direction is a personalised children’s book. Later, the same platform could support family stories, couple stories, wedding stories and personal life stories.
 
+Future fulfilment can support a digital PDF or a printed book. Production status and delivery status will be tracked separately. Nova Poshta and Ukrposhta API integrations are planned only after the manual print-and-ship workflow is validated.
 
 ## v0.3 email delivery
 
@@ -60,8 +63,8 @@ The owner-controlled Formspree endpoint is connected to the website.
 
 Email delivery was verified end to end on 2026-09-16. Submissions reach Formspree and the owner's email with human-readable language and theme values.
 
-A privacy policy now covers parent and child data, Formspree processing, local-only photo handling, retention, and deletion requests. The public data-contact email is `yoursinstory.books@gmail.com`.
+A privacy policy covers parent and child data, Formspree processing, local-only photo handling, retention, and deletion requests. The public data-contact email is `yoursinstory.books@gmail.com`.
 
 The Formspree endpoint is not a secret. API keys, passwords and customer data must never be committed.
 
-For privacy, v0.3 sends only text fields. The child photo is intentionally excluded and remains local in the browser. The next product milestone is v0.4 structured request tracking.
+For privacy, v0.3 sends only text fields. The child photo is intentionally excluded and remains local in the browser.
