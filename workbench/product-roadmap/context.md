@@ -120,4 +120,14 @@ Recommended sequence:
 
 ## Current Recommendation
 
-Next implementation step should be v0.3: add parent email field and connect the form to a simple request-delivery mechanism.
+The technical v0.3 milestone is complete: requests reach the owner's email through Formspree and the corrected payload was verified.
+
+Before collecting real customer requests, publish a privacy policy that explains:
+
+- what parent and child data is submitted
+- that Formspree processes the text submission
+- that the selected child photo stays local in v0.3
+- how long request data is retained
+- how a parent can request correction or deletion
+
+After the privacy page is live, start v0.4 by defining a Google Sheet schema and request statuses before implementing automatic storage.
