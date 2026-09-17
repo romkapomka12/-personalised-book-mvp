@@ -38,9 +38,24 @@
 
 - [x] Define Google Sheet columns and request statuses.
 - [x] Create the `Заявки` sheet as a native table with dropdowns and a marked example row.
-- [ ] Choose the Formspree-to-Google-Sheets integration method.
+- [x] Compare Formspree-to-Google-Sheets integration methods.
+- [x] Select a free Google Apps Script companion endpoint for the MVP.
+- [ ] Add the Apps Script receiver to the Google Sheet and deploy it as a web app.
+- [ ] Send each website request to Formspree for email and Apps Script for Sheet storage.
 - [ ] Save each new request to the Sheet without storing child photos.
+- [ ] Test both email delivery and Sheet storage with one request.
 - [ ] Test status tracking from new request through manual fulfilment.
+
+## Future fulfilment and shipping
+
+- [x] Record separate future product formats: digital PDF and printed book.
+- [x] Keep request, production, and delivery statuses as separate fields.
+- [x] Defer shipping fields until printed-book fulfilment is tested.
+- [ ] Add product format and print-production fields when the printed option is introduced.
+- [ ] Research Nova Poshta API for waybill creation, branch selection, and tracking.
+- [ ] Research Ukrposhta API for shipment creation and tracking.
+- [ ] Update the privacy policy before collecting phone numbers, delivery addresses, or sharing data with carriers.
+- [ ] Implement carrier integration only after the manual print-and-ship workflow is validated.
 
 ## Brand direction
 

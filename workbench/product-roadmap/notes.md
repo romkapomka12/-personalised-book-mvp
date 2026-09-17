@@ -12,28 +12,30 @@
 - Decision: v0.3 email submissions exclude the child photo. The photo remains local for preview and can be requested later after direct contact.
 - Decision: The Formspree endpoint may be committed because it is a public form identifier, not a secret credential.
 - Pitfall: Do not describe v0.3 as live until an end-to-end request reaches the owner's email.
-- Follow-up: Publish a clear privacy policy before accepting real customer data.
-- Decision: Owner-created Formspree endpoint was connected on 2026-09-16; v0.3 still requires one live end-to-end delivery test before completion.
+- Decision: Owner-created Formspree endpoint was connected on 2026-09-16.
 - Pitfall: Formspree may reinterpret short internal values such as `uk` and expose raw values such as `forest` in notification emails.
-- Decision: Convert select values to human-readable labels before submission and do not send duplicate `bookLanguageLabel` or `bookThemeLabel` fields.
-- Validation: Corrected v0.3 payload was retested successfully on 2026-09-17; language and theme arrived with human-readable values and no duplicate label fields.
-- Decision: Treat v0.3 as technically complete but not production-ready until a privacy policy is published.
+- Decision: Convert select values to human-readable labels before submission and do not send duplicate label fields.
+- Validation: Corrected v0.3 payload was retested successfully on 2026-09-17.
 - Decision: After privacy, v0.4 should use Google Sheets first with explicit request statuses and no child-photo storage.
 - Decision: Use a dedicated brand email in the public privacy policy instead of publishing a personal or test address.
-- Research note: Formspree processes and stores form submissions, may process data in the United States and other countries, and requires site owners to publish their own compatible privacy policy.
-- Privacy draft scope: controller/contact, submitted fields, purpose, consent, Formspree processing, local-only photo behavior, retention period, access/correction/deletion requests, children and parental authority, security limits, and policy updates.
-- Blocker: Do not publish a placeholder or invented privacy email.
-
 - Decision: Use `yoursinstory.books@gmail.com` as the public MVP contact for privacy, correction, and deletion requests.
 - Decision: Keep request data for up to six months after the last communication unless deletion is requested earlier or longer retention is legally required.
 - Decision: The preferred future umbrella brand is `Yours in Story` with the tagline `Personalized books for every chapter of life.`
 - Decision: Keep `StoryHero` as the temporary children-focused MVP label until a deliberate rebrand and domain purchase.
-
 - Validation: The user reviewed the published privacy page on mobile and accepted it as sufficient for the current test stage.
 - Decision: v0.3 is closed and v0.4 structured request tracking is now the active milestone.
-- Follow-up: The current privacy text is an MVP test version and must be reviewed again before a real commercial launch, especially when payments, analytics, photo uploads, AI providers, or new storage systems are added.
-
+- Follow-up: The current privacy text is an MVP test version and must be reviewed again before a real commercial launch, especially when payments, analytics, photo uploads, AI providers, delivery data, carriers, or new storage systems are added.
 - Decision: Keep competitor research and request operations in the same spreadsheet but on separate sheets; the operational sheet is named `Заявки`.
 - Decision: Use a native Google Sheets table named `RequestsTable` with dropdown fields for status, language, theme, consent, and source.
 - Decision: v0.4 stores text request data only and has no child-photo column.
 - Validation: Header row, table metadata, dropdown definitions, status formatting, frozen header, column widths, and the marked demonstration row were verified after creation.
+- Research: Formspree's native Google Sheets plugin is a Basic Plugin available from the paid Personal plan; current official pricing lists Personal at $15/month or $120/year.
+- Decision: Do not pay for the Formspree Google Sheets plugin during the learning MVP.
+- Decision: For v0.4, keep Formspree for email and add a Google Apps Script web-app endpoint that writes the same text-only request to `Заявки`.
+- Trade-off: The temporary dual-delivery design can produce partial success if one destination accepts a request and the other fails. Surface this clearly and replace it with a single backend later.
+- Security: The public Apps Script endpoint must validate required fields, allowed values, payload sizes, and honeypot input. Do not place secret keys in frontend code.
+- Decision: Future products can be delivered as `Digital PDF` or `Printed book`.
+- Decision: Keep request status, production status, and delivery status separate instead of extending one long status list.
+- Decision: Do not add recipient phone/address, carrier, or TTN columns until the printed-book workflow begins.
+- Future research: Nova Poshta and Ukrposhta APIs for branch lookup, waybill/label creation, shipment pricing, tracking, test environments, and failure handling.
+- Privacy: Update the policy before collecting delivery addresses or phone numbers and before sending customer data to a carrier.

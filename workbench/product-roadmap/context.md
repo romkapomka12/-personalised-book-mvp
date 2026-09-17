@@ -4,7 +4,7 @@
 
 This workstream captures the staged product roadmap for turning the current static landing page into a working personalised children's book service.
 
-The user agreed with a gradual path: start with manual fulfilment and only later add AI, PDF generation, admin tooling, and illustration automation.
+The user agreed with a gradual path: start with manual fulfilment and only later add AI, PDF generation, admin tooling, illustration automation, printing, and carrier integrations.
 
 ## Roadmap
 
@@ -19,11 +19,11 @@ Expected behavior:
 - request data is sent to the project owner by email
 - photo handling is still simple and must be privacy-conscious
 
-Possible implementation options:
+Current implementation:
 
-- Formspree / Getform / similar form backend
-- EmailJS for frontend-only email sending
-- custom Python backend later
+- Formspree receives the public website submission
+- the owner receives an email notification
+- the selected photo remains local in the browser
 
 ### v0.4 — Requests are saved to Google Sheet or database
 
@@ -34,11 +34,36 @@ Expected behavior:
 - every request gets stored in a table
 - owner can review request history
 - request status can be tracked manually
+- Formspree continues to provide the email notification
 
-Possible storage:
+Selected MVP integration:
 
-- Google Sheets for early MVP
-- SQLite/PostgreSQL for later backend
+- keep the current Formspree submission for email delivery
+- add a Google Apps Script web-app endpoint bound to the business spreadsheet
+- send the same text-only request payload to Apps Script
+- validate and append the request to the existing `Заявки` sheet
+- do not send or store the selected child photo
+
+Why this method was selected:
+
+- Formspree's native Google Sheets plugin is available only on paid Personal, Professional, and Business plans
+- the current Personal plan is listed at $15/month or $120/year
+- a Formspree webhook requires a higher paid plan
+- Google Apps Script can expose a `doPost(e)` web-app endpoint and append a row without introducing another paid automation service
+- this is an MVP bridge; a later backend should become the single source of truth
+
+Important implementation risk:
+
+- Formspree and Apps Script are two separate deliveries, so the UI must not claim full success unless both results are understood
+- the Apps Script endpoint is public; it must validate required fields, expected values, payload size, and a honeypot
+- no paid API secrets may be placed in frontend JavaScript
+
+Sources reviewed on 2026-09-17:
+
+- https://help.formspree.io/articles/plugins/use-google-sheets-to-send-your-submissions-to-a-spreadsheet
+- https://formspree.io/plans
+- https://developers.google.com/apps-script/guides/web
+- https://developers.google.com/apps-script/reference/spreadsheet/sheet#appendRow(Object)
 
 ### v0.5 — Manual PDF creation from request
 
@@ -105,6 +130,32 @@ Important risk:
 
 - AI illustrations are harder than text because character consistency and likeness can fail.
 
+## Future fulfilment model
+
+The catalogue can later contain at least two delivery formats:
+
+- `Digital PDF`
+- `Printed book`
+
+Do not overload the current request status with printing and shipping events. Keep three separate concepts:
+
+1. Request status: `Нова`, `На перевірці`, `Очікуємо відповідь`, `У роботі`, `Preview надіслано`, `Завершено`, `Скасовано`.
+2. Production status: future values such as `Не розпочато`, `Макет готується`, `Погоджено`, `Передано в друк`, `Надруковано`.
+3. Delivery status: future values such as `Не потрібна`, `Очікує відправлення`, `Накладну створено`, `Передано перевізнику`, `У дорозі`, `Доставлено`, `Повернення`.
+
+Future printed-order fields may include:
+
+- `Формат книги`
+- `Статус виробництва`
+- `Статус доставки`
+- `Перевізник`
+- `ТТН`
+- `Дата відправлення`
+- `Дата доставки`
+- delivery price and recipient details when legally and operationally required
+
+Nova Poshta and Ukrposhta API integrations are future scope. Research should cover branch/address lookup, waybill creation, label generation, tracking updates, error handling, price, and test environments. Phone numbers and delivery addresses must not be collected until the privacy policy and retention rules are updated.
+
 ## Core Product Principle
 
 Do not jump straight to full automation. Build trust and validate demand first.
@@ -116,21 +167,7 @@ Recommended sequence:
 3. learn what customers want
 4. automate text generation
 5. automate PDF generation
-6. only then add advanced illustration workflows
-
-## Current Recommendation
-
-The technical v0.3 milestone is complete: requests reach the owner's email through Formspree and the corrected payload was verified.
-
-Before collecting real customer requests, publish a privacy policy that explains:
-
-- what parent and child data is submitted
-- that Formspree processes the text submission
-- that the selected child photo stays local in v0.3
-- how long request data is retained
-- how a parent can request correction or deletion
-
-After the privacy page is live, start v0.4 by defining a Google Sheet schema and request statuses before implementing automatic storage.
+6. only then add advanced illustration and fulfilment workflows
 
 ## Brand Direction
 

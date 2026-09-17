@@ -2,7 +2,7 @@
 
 - Workstream: product-roadmap
 - Status: IN_PROGRESS
-- Last Updated: 2026-09-17 11:35 UTC+3
+- Last Updated: 2026-09-17
 
 ## Progress
 
@@ -11,9 +11,12 @@
 - Completed: Canonical request columns and allowed statuses defined.
 - Completed: Native `RequestsTable` created with dropdowns, frozen headers, column sizing, status colors, and a marked example row.
 - Completed: Child photos are excluded from v0.4 storage.
-- In progress: Select the automatic Formspree-to-Google-Sheets integration method.
-- Blockers: none.
+- Completed: Formspree integration options compared using current official documentation.
+- Decision: Keep Formspree for email and use a free Google Apps Script companion endpoint for Sheet storage.
+- Completed: Future PDF/printed formats, separate production/delivery statuses, and later Nova Poshta/Ukrposhta integrations recorded.
+- In progress: Prepare the Apps Script receiver and deployment instructions.
+- Blockers: Google Apps Script must be deployed from the spreadsheet owner's Google account before the website endpoint can be connected.
 
 ## NEXT STEP
 
-Compare the viable Formspree-to-Google-Sheets integration methods and select one for the MVP.
+Add the Google Apps Script receiver for the `Заявки` sheet, deploy it as a web app from the spreadsheet owner's account, and obtain its `/exec` URL.
