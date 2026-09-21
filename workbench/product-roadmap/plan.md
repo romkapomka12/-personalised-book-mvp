@@ -44,7 +44,7 @@
 - [x] Deploy the Apps Script receiver from the spreadsheet owner's account.
 - [x] Connect the production `/exec` URL to the website.
 - [x] Send each website request to Formspree for email and Apps Script for Sheet storage.
-- [ ] Save each new request to the Sheet without storing child photos.
+- [x] Save each new request to the Sheet without storing child photos.
 - [ ] Test both email delivery and Sheet storage with one request.
 - [ ] Test status tracking from new request through manual fulfilment.
 

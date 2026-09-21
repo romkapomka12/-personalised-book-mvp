@@ -46,3 +46,9 @@
 - Decision: If Formspree succeeds but Sheet dispatch fails, tell the visitor not to resubmit because the email request already exists.
 - Security: Add an off-screen `company` honeypot shared by the website and Apps Script validation.
 - Privacy: The public privacy page now discloses Google Apps Script and private Google Sheets storage for text request data.
+
+- Incident: The first live v0.4 submission reached Formspree but not Google Sheets because the Apps Script deployment was not accessible to everyone.
+- Resolution: The spreadsheet owner changed web-app access to `Anyone` and updated the deployment while retaining the same `/exec` URL.
+- Validation: Public `doGet` returned `{"ok":true,"service":"Yours in Story request receiver"}`.
+- Validation: Two synthetic direct POST checks created rows `REQ-20260922-004530-D6D035` and `REQ-20260922-004601-1CE758` in `Заявки`. Both are visibly labelled `SYSTEM TEST` / `ТЕХНІЧНИЙ ТЕСТ`.
+- Lesson: Changing Apps Script access does not replay submissions that failed before the permission change.
