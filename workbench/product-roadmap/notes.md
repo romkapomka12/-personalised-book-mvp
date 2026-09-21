@@ -39,3 +39,10 @@
 - Decision: Do not add recipient phone/address, carrier, or TTN columns until the printed-book workflow begins.
 - Future research: Nova Poshta and Ukrposhta APIs for branch lookup, waybill/label creation, shipment pricing, tracking, test environments, and failure handling.
 - Privacy: Update the policy before collecting delivery addresses or phone numbers and before sending customer data to a carrier.
+
+- Validation: The spreadsheet owner deployed the Apps Script web app and supplied a production `/exec` URL on 2026-09-21.
+- Decision: Submit to Formspree first, then send a text-only JSON copy to Apps Script. This avoids a Sheet-only record when email delivery fails.
+- Limitation: The Apps Script request uses `no-cors`; the browser can confirm that the request was dispatched but cannot read the Apps Script response. End-to-end validation must check the `Заявки` sheet.
+- Decision: If Formspree succeeds but Sheet dispatch fails, tell the visitor not to resubmit because the email request already exists.
+- Security: Add an off-screen `company` honeypot shared by the website and Apps Script validation.
+- Privacy: The public privacy page now discloses Google Apps Script and private Google Sheets storage for text request data.

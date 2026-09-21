@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Політика приватності StoryHero MVP: які дані надсилаються, як використовується Formspree, що відбувається з фото та як попросити видалити дані." />
+  <meta name="description" content="Політика приватності StoryHero MVP: які дані надсилаються, як використовуються Formspree і Google Sheets, що відбувається з фото та як попросити видалити дані." />
   <title>Політика приватності — StoryHero MVP</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
@@ -23,13 +23,14 @@
       <p class="eyebrow">Приватність</p>
       <h1>Політика приватності</h1>
       <p class="legal-intro">
-        Останнє оновлення: 17 вересня 2026 року. Ця політика описує обробку даних
+        Останнє оновлення: 21 вересня 2026 року. Ця політика описує обробку даних
         у навчальному прототипі StoryHero MVP — проєкті майбутнього бренду Yours in Story.
       </p>
 
       <div class="legal-summary">
-        <strong>Коротко:</strong> форма надсилає лише текстові дані заявки через Formspree.
-        Вибране фото дитини показується локально у браузері та не входить до заявки v0.3.
+        <strong>Коротко:</strong> форма надсилає лише текстові дані заявки через Formspree та
+        записує їх у приватний робочий журнал Google Sheets. Вибране фото дитини показується
+        локально у браузері та не входить до заявки v0.4.
       </div>
 
       <section>
@@ -70,7 +71,7 @@
       <section>
         <h2>4. Що відбувається з фото</h2>
         <p>
-          У версії v0.3 вибране фото використовується тільки для локального preview у вашому
+          У версії v0.4 вибране фото використовується тільки для локального preview у вашому
           браузері. Воно не додається до запиту Formspree, не надсилається власнику проєкту
           і не зберігається цим сайтом. Після закриття або перезавантаження сторінки локальний
           preview зникає.
@@ -90,6 +91,13 @@
           <strong>GitHub Pages</strong> розміщує статичні файли сайту. GitHub може автоматично
           обробляти технічні дані відвідування відповідно до
           <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener">політики приватності GitHub</a>.
+        </p>
+        <p>
+          <strong>Google Apps Script і Google Sheets</strong> отримують копію текстових полів
+          заявки та додають її до приватного робочого журналу власника проєкту. Дані
+          обробляються відповідно до
+          <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">політики приватності Google</a>.
+          Фото до Google Sheets не передається.
         </p>
         <p>На цьому етапі сайт не використовує Google Analytics або рекламні трекери.</p>
       </section>

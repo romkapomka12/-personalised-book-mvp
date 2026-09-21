@@ -45,7 +45,7 @@
 
         <article class="book-card" aria-label="Приклад персоналізованої книги">
           <div class="book-cover">
-            <span class="book-badge">v0.3</span>
+            <span class="book-badge">v0.4</span>
             <h2>Софія і зоряна карта</h2>
             <p>Імʼя + вік + інтереси + фото-референс</p>
           </div>
@@ -173,11 +173,11 @@
     </section>
 
     <section id="create-book" class="section container">
-      <p class="eyebrow">v0.3 — заявка на email</p>
+      <p class="eyebrow">v0.4 — email + журнал заявок</p>
       <h2>Розкажіть про майбутнього героя</h2>
       <p class="section-intro">
         Заповніть коротку заявку. Після надсилання її текстові дані потраплять
-        власнику проєкту, а фото поки залишатиметься тільки у вашому браузері.
+        власнику проєкту на email і до робочого журналу заявок, а фото залишатиметься тільки у вашому браузері.
       </p>
 
       <form
@@ -275,7 +275,7 @@
           />
         </label>
         <p class="field-help" id="photoHelp">
-          JPG, PNG, WebP або формат фото з телефону, до 10 МБ. У v0.3 файл не входить до заявки і не залишає браузер.
+          JPG, PNG, WebP або формат фото з телефону, до 10 МБ. У v0.4 файл не входить до заявки і не залишає браузер.
         </p>
 
         <div class="photo-preview" id="photoPreview" aria-live="polite">
@@ -285,6 +285,11 @@
         <div class="privacy-note">
           <strong>Що буде надіслано:</strong> email, імʼя, вік, мова, тема та інтереси.
           Саме фото навмисно не надсилається на цьому етапі.
+        </div>
+
+        <div class="honeypot" aria-hidden="true">
+          <label for="company">Не заповнюйте це поле</label>
+          <input type="text" id="company" name="company" tabindex="-1" autocomplete="off" />
         </div>
 
         <label class="checkbox-label">
@@ -319,7 +324,7 @@
           </details>
           <details>
             <summary>Що відбувається після надсилання заявки?</summary>
-            <p>Ми отримаємо текстові дані заявки на email, звʼяжемося з батьками й уточнимо наступні кроки. Автоматичної генерації та оплати у v0.3 ще немає.</p>
+            <p>Ми отримаємо текстові дані заявки на email і в робочий журнал, звʼяжемося з батьками й уточнимо наступні кроки. Автоматичної генерації та оплати у v0.4 ще немає.</p>
           </details>
           <details>
             <summary>Чи будуть сімейні або весільні історії?</summary>

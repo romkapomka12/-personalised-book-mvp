@@ -7,6 +7,8 @@ const submitButton = document.querySelector('#submitButton');
 
 const MAX_PHOTO_SIZE = 10 * 1024 * 1024;
 const FORM_ID_PLACEHOLDER = 'YOUR_FORM_ID';
+const SHEETS_ENDPOINT = 'https://script.google.com/macros/s/AKfycbyIqVCj6JcgYA6EezMpjCD8CkOM-4mWCMqFtBYnAkv6fpWvCo0mZXGne2TRNGjlJWrD/exec';
+const SHEETS_ENDPOINT_PLACEHOLDER = 'YOUR_APPS_SCRIPT_URL';
 
 const themeLabels = {
   space: 'Космічна пригода',
@@ -91,11 +93,44 @@ function renderRequestPreview(formData, wasSent) {
   note.className = 'result-note';
   note.textContent = wasSent
     ? 'Текстові дані заявки відправлено. Фото залишилося тільки у вашому браузері.'
-    : 'Форма вже готова до v0.3, але email-канал ще потрібно активувати.';
+    : 'Форма ще працює у режимі локального preview.';
   resultCard.append(note);
 
   resultCard.hidden = false;
   resultCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+function createSheetsPayload(formData) {
+  return {
+    email: String(formData.get('email') || '').trim(),
+    parentName: String(formData.get('parentName') || '').trim(),
+    childName: String(formData.get('childName') || '').trim(),
+    childAge: Number(formData.get('childAge')),
+    bookLanguage: String(formData.get('bookLanguage') || ''),
+    bookTheme: String(formData.get('bookTheme') || ''),
+    childInterests: String(formData.get('childInterests') || '').trim(),
+    privacyConsent: String(formData.get('privacyConsent') || ''),
+    company: String(formData.get('company') || ''),
+  };
+}
+
+async function sendRequestToSheet(formData) {
+  const endpointConfigured =
+    SHEETS_ENDPOINT && !SHEETS_ENDPOINT.includes(SHEETS_ENDPOINT_PLACEHOLDER);
+
+  if (!endpointConfigured) {
+    throw new Error('Google Sheets endpoint is not configured.');
+  }
+
+  await fetch(SHEETS_ENDPOINT, {
+    method: 'POST',
+    mode: 'no-cors',
+    headers: {
+      'Content-Type': 'text/plain;charset=UTF-8',
+    },
+    body: JSON.stringify(createSheetsPayload(formData)),
+    keepalive: true,
+  });
 }
 
 photoInput.addEventListener('change', () => {
@@ -140,8 +175,9 @@ form.addEventListener('submit', async (event) => {
   if (!form.reportValidity()) return;
 
   const formData = new FormData(form);
-  const endpoint = form.action;
-  const endpointConfigured = endpoint && !endpoint.includes(FORM_ID_PLACEHOLDER);
+  const emailEndpoint = form.action;
+  const emailEndpointConfigured =
+    emailEndpoint && !emailEndpoint.includes(FORM_ID_PLACEHOLDER);
 
   const selectedLanguage = String(formData.get('bookLanguage') || '');
   const selectedTheme = String(formData.get('bookTheme') || '');
@@ -155,7 +191,7 @@ form.addEventListener('submit', async (event) => {
     hasPhoto ? 'Вибрано локально, файл не прикріплено' : 'Фото не вибрано'
   );
 
-  if (!endpointConfigured) {
+  if (!emailEndpointConfigured) {
     renderRequestPreview(formData, false);
     setFormStatus(
       'Email-відправлення ще не активоване. Дані не покинули браузер.',
@@ -168,7 +204,7 @@ form.addEventListener('submit', async (event) => {
   submitButton.textContent = 'Надсилаємо...';
 
   try {
-    const response = await fetch(endpoint, {
+    const emailResponse = await fetch(emailEndpoint, {
       method: 'POST',
       body: formData,
       headers: {
@@ -176,16 +212,37 @@ form.addEventListener('submit', async (event) => {
       },
     });
 
-    if (!response.ok) {
-      const responseData = await response.json().catch(() => null);
+    if (!emailResponse.ok) {
+      const responseData = await emailResponse.json().catch(() => null);
       const message = responseData && responseData.errors
         ? responseData.errors.map((error) => error.message).join(' ')
         : 'Сервіс не прийняв заявку.';
       throw new Error(message);
     }
 
+    let sheetSyncRequested = false;
+
+    try {
+      await sendRequestToSheet(formData);
+      sheetSyncRequested = true;
+    } catch (sheetError) {
+      console.error('Google Sheets sync failed:', sheetError);
+    }
+
     renderRequestPreview(formData, true);
-    setFormStatus('Готово. Перевірте свою пошту для подальшої відповіді.', 'success');
+
+    if (sheetSyncRequested) {
+      setFormStatus(
+        'Готово. Заявку надіслано на email і передано до журналу заявок.',
+        'success'
+      );
+    } else {
+      setFormStatus(
+        'Email надіслано, але запис у журнал не підтверджено. Не надсилайте заявку повторно.',
+        'warning'
+      );
+    }
+
     form.reset();
     resetPhotoPreview();
   } catch (error) {
